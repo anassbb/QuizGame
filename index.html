@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Info Box -->
+    <div class="info_box activeInfo">
+      <div class="info-title"><span>Welcome to the perfect Quiz</span></div>
+      <div class="info-list">
+        <div class="info">
+          <label for="category">Category</label>
+          <br />
+          <select
+            id="category"
+            name="category"
+            class="form-control"
+            onchange="selectCategory()"
+          ></select>
+        </div>
+
+        <div class="info">
+          <label for="difficulty">Difficulty</label>
+          <br />
+          <select
+            id="difficulty"
+            name="difficulty"
+            class="form-control"
+            onchange="selectDifficulty()"
+          ></select>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="start" onclick="Quiz()">Start Quiz</button>
+      </div>
+    </div>
+
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+      <header>
+        <!-- Question title number -->
+        <div class="title"></div>
+        <div class="timer">
+          <div class="timer_sec">15</div>
+        </div>
+      </header>
+      <section>
+        <!-- Question text & options -->
+        <div class="que_text"></div>
+        <div class="option_list"></div>
+      </section>
+
+      <footer>
+        <!-- Count Number -->
+        <div class="total_que">1 of 5</div>
+        <button class="next_btn" onclick="nextQuestion()">Next</button>
+      </footer>
+    </div>
+
+    <!-- Result Box -->
+    <div class="result_box">
+      <div class="complete_text">You've completed the Quiz!</div>
+      <div class="complete_text">
+        <progress class="progress" max="5"></progress>
+      </div>
+      <!-- Score result -->
+      <div class="score_text"></div>
+      <div class="buttons">
+        <button class="start" onclick="exitQuiz()">Replay Quiz</button>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+  </body>
+</html>
